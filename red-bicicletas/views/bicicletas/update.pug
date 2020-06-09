@@ -1,0 +1,40 @@
+extends ../layout
+block content
+    a(href='/bicicletas') Volver
+    br
+    br
+    br
+    h1 Modificar Bicicleta
+    br
+    br
+    form(action=`/bicicletas/${bici.id}/update` method='post')
+        // Form Name
+        legend Form Name
+        // Text input
+        .form-group
+        label.col-md-4.control-label(for='id') ID
+        .col-md-4
+            input#ID.form-control.input-md(name='id' type='text' placeholder='' value=bici.id)
+        // Text input
+        .form-group
+        label.col-md-4.control-label(for='color') Color
+        .col-md-4
+            input#Color.form-control.input-md(name='color' type='text' placeholder='' value=bici.color)
+        // Text input
+        .form-group
+        label.col-md-4.control-label(for='modelo') Modelo
+        .col-md-4
+            input#modelo.form-control.input-md(name='modelo' type='text' placeholder='' value=bici.modelo)
+        // Text input
+        .form-group
+        label.col-md-4.control-label(for='lat') Latitud
+        .col-md-4
+            input#lat.form-control.input-md(name='lat' type='text' placeholder='' value=bici.ubicacion[0])
+        // Text input
+        .form-group
+        label.col-md-4.control-label(for='lng') Longitud
+        .col-md-4
+            input#long.form-control.input-md(name='lng' type='text' placeholder='' value=bici.ubicacion[1])
+        br
+        br
+        input.btn(type='submit' value='OK')
